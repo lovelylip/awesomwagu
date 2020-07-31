@@ -44,7 +44,7 @@
                 </tr>
             </ng-template>
             <ng-template pTemplate="summary">
-                <p>Selected Node: {{selectedTouristPlace ? selectedTouristPlace.data : 'none'}}</p>
+                <p>Selected Node: {{selectedTouristPlace && selectedTouristPlace.data ? selectedTouristPlace.data.name : 'none'}}</p>
             </ng-template>
         </p-treeTable>
     </pe-step>
