@@ -1,0 +1,40 @@
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import {APP_BASE_HREF} from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {CommonModule} from '@angular/common';
+import { AwesomeaguSharedModule } from '../../../shared/shared.module';
+import {ToastModule} from 'primeng/toast';
+import {ContextMenuModule} from 'primeng/contextmenu';
+import {TableModule} from 'primeng/table';
+import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
+import {EmployeeService} from './service/employee.service';
+import {MessageService} from 'primeng/api';
+
+import {
+    ContextMenuDemoComponent,
+    contextmenuDemoRoute
+} from './';
+
+const PRIMENG_STATES = [
+    contextmenuDemoRoute
+];
+
+@NgModule({
+    imports: [
+        AwesomeaguSharedModule,
+        CommonModule,
+        BrowserAnimationsModule,
+        ContextMenuModule,
+        ToastModule,
+        TableModule,
+        WizardModule,
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
+    ],
+    declarations: [
+        ContextMenuDemoComponent
+    ],
+    providers: [{provide: APP_BASE_HREF, useValue: '/'}, EmployeeService, MessageService],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
+})
+export class AwesomeaguContextMenuDemoModule {}

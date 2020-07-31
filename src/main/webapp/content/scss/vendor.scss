@@ -11,4 +11,20 @@ eg $input-color: red;
 @import '~bootstrap/scss/bootstrap';
 @import '~bootswatch/dist/darkly/bootswatch';
 
+/* ==========================================================================
+PrimeNG and it's third-party dependencies resources
+========================================================================== */
+
+@import "~primeicons/primeicons.css";
+@import "~primeflex/primeflex.css";
+@import "~primeicons/primeicons.css";
+@import "~primeng/resources/primeng.min.css";
+@import "~primeng-extensions/resources/primeng-extensions.min.css";
+ @import "~primeng/resources/themes/luna-green/theme.css";
+ @import "~quill/dist/quill.core.css";
+ @import "~quill/dist/quill.snow.css";
+ @import "~@fullcalendar/core/main.css";
+  @import "~@fullcalendar/daygrid/main.css";
+ @import "~@fullcalendar/timegrid/main.css";
+
 /* jhipster-needle-scss-add-vendor JHipster will add new css style */

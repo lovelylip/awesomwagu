@@ -1,0 +1,33 @@
+<form novalidate>
+    <pe-steps [(activeIndex)]="activeIndex" (change)="onChangeStep($event)">
+        <!-- Basic -->
+        <pe-step label="Basic">
+            <h3>Select any one of your favourite Prime libraries?(Single)</h3>
+            <p-selectButton [options]="types" [(ngModel)]="selectedType" name="basic"></p-selectButton>
+        </pe-step>
+
+        <!-- Multiple -->
+        <pe-step label="Multiple">
+            <h3>Choose your favourite Prime libraries?(Multiple)</h3>
+            <p-selectButton [options]="types" [(ngModel)]="selectedTypes" name="advanced" [multiple]=true></p-selectButton>
+        </pe-step>
+
+        <pe-step label="IconOnly">
+            <p-selectButton [options]="modes" [(ngModel)]="selectedModes" [multiple]=true></p-selectButton>
+            <p>Selected Modes: <span style="font-weight: bold" *ngFor="let mode of selectedModes">{{mode}} </span></p>
+        </pe-step>
+
+        <!-- Events -->
+        <pe-step label="Events">
+            <p-selectButton [options]="types" [(ngModel)]="selectedTypeEvents" name="events" (onChange)="handleChange($event)"></p-selectButton>
+        </pe-step>
+
+        <!-- Disabled -->
+        <pe-step label="Disabled">
+            <p-selectButton [options]="types" [(ngModel)]="selectedTypeDisabled" name="disabled" [disabled]="true"></p-selectButton>
+        </pe-step>
+    </pe-steps>
+
+</form>
+
+<p-toast [style]="{marginTop: '80px'}"></p-toast>

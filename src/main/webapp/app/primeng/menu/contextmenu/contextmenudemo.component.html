@@ -1,0 +1,41 @@
+<pe-steps [(activeIndex)]="activeIndex" (change)="onChangeStep($event);">
+    <!-- Basic -->
+    <pe-step label="Basic" [styleClass]="'container-format'">
+        <p-contextMenu [global]="true" [model]="documentItems" appendTo="body"></p-contextMenu>
+    </pe-step>
+    <!-- Customization -->
+    <pe-step label="Customization">
+        <p-contextMenu [target]="image" [model]="targetItems" appendTo="body"></p-contextMenu>
+        <img #image src="/content/primeng/assets/data/images/logos/primeng.png" alt="Logo">
+    </pe-step>
+
+    <!-- Table Integration-->
+
+    <pe-step label="Table Integration">
+        <p-contextMenu #contextmenu [model]="tableItems" appendTo="body"></p-contextMenu>
+            <p-table  [value]="employees" [(contextMenuSelection)]="selectedEmployee" [contextMenu]="contextmenu">
+                <ng-template pTemplate="caption">
+                    Employee Information
+                </ng-template>
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>Employee ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Telephone</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-employee>
+                    <tr>
+                        <td>{{employee.id}}</td>
+                        <td>{{employee.name}}</td>
+                        <td>{{employee.email}}</td>
+                        <td>{{employee.contact}}</td>
+                    </tr>
+                </ng-template>
+            </p-table>
+    </pe-step>
+
+</pe-steps>
+
+<p-toast [style]="{marginTop: '80px'}"></p-toast>

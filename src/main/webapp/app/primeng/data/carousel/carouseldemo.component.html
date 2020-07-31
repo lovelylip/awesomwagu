@@ -1,0 +1,32 @@
+<form novalidate>
+    <pe-steps [(activeIndex)]="activeIndex" (change)="onChangeStep($event);" [stepClass]="'layout-format'">
+        <!-- Basic -->
+        <pe-step label="Basic" >
+            <p-carousel headerText="Basic" [value]="basicBrowsers">
+                <ng-template let-browser pTemplate="item">
+                    <div class="p-grid">
+                        <div class="p-col-12">
+                            <img src="/content/primeng/assets/data/images/browsers/{{browser.code}}.png" width="60">
+                        </div>
+                        <div class="p-col-12">
+                            Engine: {{browser.engine}}
+                        </div>
+                        <div class="p-col-12">
+                            Browser: {{browser.browser}}
+                        </div>
+                        <div class="p-col-12">
+                            Platform: {{browser.platform}}
+                        </div>
+                        <div class="p-col-12">
+                            Grade: {{browser.grade}}
+                        </div>
+                    </div>
+                </ng-template>
+            </p-carousel>
+        </pe-step>
+
+
+    </pe-steps>
+</form>
+
+<p-toast [style]="{marginTop: '80px'}"></p-toast>

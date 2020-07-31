@@ -1,0 +1,41 @@
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+// import needed PrimeNG modules here
+
+import { AwesomeaguSharedModule } from '../../../shared/shared.module';
+import {FormsModule} from '@angular/forms';
+import {CardModule} from 'primeng/card';
+import {ButtonModule} from 'primeng/button';
+import {ToastModule} from 'primeng/toast';
+import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
+import {MessageService} from 'primeng/api';
+
+import {
+    FlexGridDemoComponent,
+    flexgridDemoRoute
+} from './';
+
+const PRIMENG_STATES = [
+    flexgridDemoRoute
+];
+
+@NgModule({
+    imports: [
+        AwesomeaguSharedModule,
+        BrowserAnimationsModule,
+        FormsModule,
+        CardModule,
+        ToastModule,
+        ButtonModule,
+        WizardModule,
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
+    ],
+    declarations: [
+        FlexGridDemoComponent
+    ],
+    providers: [MessageService],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
+})
+export class AwesomeaguFlexGridDemoModule {}

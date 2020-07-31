@@ -1,0 +1,98 @@
+import { Component, OnInit } from '@angular/core';
+import {MenuItem, MessageService} from 'primeng/api';
+
+@Component({
+    selector: 'jhi-slidemenu',
+    templateUrl: './slidemenudemo.component.html',
+    styles: []
+})
+export class SlideMenuDemoComponent implements OnInit {
+    activeIndex = 0;
+    items: MenuItem[];
+
+    constructor(private messageService: MessageService) {
+        this.items = [];
+    }
+
+    ngOnInit(): void {
+        this.items = [
+            {
+                label: 'File',
+                icon: 'fa fa-file-o',
+                items: [{
+                    label: 'New',
+                    icon: 'fa fa-plus',
+                    items: [
+                        {label: 'Project'},
+                        {label: 'Other'},
+                    ]
+                },
+                    {label: 'Open'},
+                    {label: 'Quit'}
+                ]
+            },
+            {
+                label: 'Edit',
+                icon: 'fa fa-edit',
+                items: [
+                    {label: 'Undo', icon: 'fa fa-mail-forward'},
+                    {label: 'Redo', icon: 'fa fa-mail-reply'}
+                ]
+            },
+            {
+                label: 'Help',
+                icon: 'fa fa-question',
+                items: [
+                    {
+                        label: 'Contents'
+                    },
+                    {
+                        label: 'Search',
+                        icon: 'fa fa-search',
+                        items: [
+                            {
+                                label: 'Text',
+                                items: [
+                                    {
+                                        label: 'Workspace'
+                                    }
+                                ]
+                            },
+                            {
+                                label: 'File'
+                            }
+                        ]}
+                ]
+            },
+            {
+                label: 'Actions',
+                icon: 'fa fa-gear',
+                items: [
+                    {
+                        label: 'Edit',
+                        icon: 'fa fa-refresh',
+                        items: [
+                            {label: 'Save', icon: 'fa fa-save'},
+                            {label: 'Update', icon: 'fa fa-save'},
+                        ]
+                    },
+                    {
+                        label: 'Other',
+                        icon: 'fa fa-phone',
+                        items: [
+                            {label: 'Delete', icon: 'fa fa-minus'}
+                        ]
+                    }
+                ]
+            },
+            {
+                label: 'Quit', icon: 'fa fa-minus'
+            }
+        ];
+    }
+
+    onChangeStep(label: string): void {
+        this.messageService.add({severity: 'info', summary: label});
+    }
+
+}

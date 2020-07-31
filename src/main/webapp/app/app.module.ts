@@ -7,6 +7,7 @@ import { AwesomeaguCoreModule } from 'app/core/core.module';
 import { AwesomeaguAppRoutingModule } from './app-routing.module';
 import { AwesomeaguHomeModule } from './home/home.module';
 import { AwesomeaguEntityModule } from './entities/entity.module';
+import { AwesomeaguprimengModule } from './primeng/primeng.module';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import { MainComponent } from './layouts/main/main.component';
 import { NavbarComponent } from './layouts/navbar/navbar.component';
@@ -21,6 +22,7 @@ import { ErrorComponent } from './layouts/error/error.component';
     AwesomeaguSharedModule,
     AwesomeaguCoreModule,
     AwesomeaguHomeModule,
+    AwesomeaguprimengModule,
     // jhipster-needle-angular-add-module JHipster will add new module here
     AwesomeaguEntityModule,
     AwesomeaguAppRoutingModule,

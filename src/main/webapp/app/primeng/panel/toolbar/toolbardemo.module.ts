@@ -1,0 +1,45 @@
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import {BrowserModule} from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {FormsModule} from '@angular/forms';
+
+// import needed PrimeNG modules here
+
+import { AwesomeaguSharedModule } from '../../../shared/shared.module';
+import {ToolbarModule} from 'primeng/toolbar';
+import {InputTextModule} from 'primeng/inputtext';
+import {SplitButtonModule} from 'primeng/splitbutton';
+import {ButtonModule} from 'primeng/button';
+import {WizardModule} from 'primeng-extensions/components/wizard/wizard.js';
+import {MessageService} from 'primeng/api';
+
+import {
+    ToolbarDemoComponent,
+    toolbarDemoRoute
+} from './';
+
+const PRIMENG_STATES = [
+    toolbarDemoRoute
+];
+
+@NgModule({
+    imports: [
+        AwesomeaguSharedModule,
+        BrowserModule,
+        BrowserAnimationsModule,
+        FormsModule,
+        ToolbarModule,
+        InputTextModule,
+        SplitButtonModule,
+        ButtonModule,
+        WizardModule,
+        RouterModule.forRoot(PRIMENG_STATES, { useHash: true })
+    ],
+    declarations: [
+        ToolbarDemoComponent
+    ],
+    providers: [MessageService],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
+})
+export class AwesomeaguToolbarDemoModule {}
