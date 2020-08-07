@@ -1,0 +1,129 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="awesomeaguApp.dmCqBhxh.home.title">Dm Cq Bhxhs</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-dm-cq-bhxh" [routerLink]="['/dm-cq-bhxh/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span class="hidden-sm-down"  jhiTranslate="awesomeaguApp.dmCqBhxh.home.createLabel">
+            Create a new Dm Cq Bhxh
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="{{ 'awesomeaguApp.dmCqBhxh.home.search' | translate }}">
+
+                    <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+                        <fa-icon icon="search"></fa-icon>
+                    </button>
+
+                    <button class="input-group-append btn btn-danger" (click)="search('')" *ngIf="currentSearch">
+                        <fa-icon icon="trash-alt"></fa-icon>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="dmCqBhxhs?.length === 0">
+        <span jhiTranslate="awesomeaguApp.dmCqBhxh.home.notFound">No dmCqBhxhs found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="dmCqBhxhs && dmCqBhxhs.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="maCqbh"><span jhiTranslate="awesomeaguApp.dmCqBhxh.maCqbh">Ma Cqbh</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="ten"><span jhiTranslate="awesomeaguApp.dmCqBhxh.ten">Ten</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="diaChi"><span jhiTranslate="awesomeaguApp.dmCqBhxh.diaChi">Dia Chi</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="maXa"><span jhiTranslate="awesomeaguApp.dmCqBhxh.maXa">Ma Xa</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="maHuyen"><span jhiTranslate="awesomeaguApp.dmCqBhxh.maHuyen">Ma Huyen</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="maTinh"><span jhiTranslate="awesomeaguApp.dmCqBhxh.maTinh">Ma Tinh</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="emailAcc"><span jhiTranslate="awesomeaguApp.dmCqBhxh.emailAcc">Email Acc</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="phoneNumeric"><span jhiTranslate="awesomeaguApp.dmCqBhxh.phoneNumeric">Phone Numeric</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="status"><span jhiTranslate="awesomeaguApp.dmCqBhxh.status">Status</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="activeDate"><span jhiTranslate="awesomeaguApp.dmCqBhxh.activeDate">Active Date</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="inactiveDate"><span jhiTranslate="awesomeaguApp.dmCqBhxh.inactiveDate">Inactive Date</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="maCqbhCha"><span jhiTranslate="awesomeaguApp.dmCqBhxh.maCqbhCha">Ma Cqbh Cha</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="nguoiKy"><span jhiTranslate="awesomeaguApp.dmCqBhxh.nguoiKy">Nguoi Ky</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="chucDanh"><span jhiTranslate="awesomeaguApp.dmCqBhxh.chucDanh">Chuc Danh</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="tenNoiKy"><span jhiTranslate="awesomeaguApp.dmCqBhxh.tenNoiKy">Ten Noi Ky</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="isActive"><span jhiTranslate="awesomeaguApp.dmCqBhxh.isActive">Is Active</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="path"><span jhiTranslate="awesomeaguApp.dmCqBhxh.path">Path</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="ngayKhoa"><span jhiTranslate="awesomeaguApp.dmCqBhxh.ngayKhoa">Ngay Khoa</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="soQdTl"><span jhiTranslate="awesomeaguApp.dmCqBhxh.soQdTl">So Qd Tl</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="ngayQdTl"><span jhiTranslate="awesomeaguApp.dmCqBhxh.ngayQdTl">Ngay Qd Tl</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="cqKyQd"><span jhiTranslate="awesomeaguApp.dmCqBhxh.cqKyQd">Cq Ky Qd</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let dmCqBhxh of dmCqBhxhs ;trackBy: trackId">
+                    <td><a [routerLink]="['/dm-cq-bhxh', dmCqBhxh.id, 'view']">{{ dmCqBhxh.id }}</a></td>
+                    <td>{{ dmCqBhxh.maCqbh }}</td>
+                    <td>{{ dmCqBhxh.ten }}</td>
+                    <td>{{ dmCqBhxh.diaChi }}</td>
+                    <td>{{ dmCqBhxh.maXa }}</td>
+                    <td>{{ dmCqBhxh.maHuyen }}</td>
+                    <td>{{ dmCqBhxh.maTinh }}</td>
+                    <td>{{ dmCqBhxh.emailAcc }}</td>
+                    <td>{{ dmCqBhxh.phoneNumeric }}</td>
+                    <td>{{ dmCqBhxh.status }}</td>
+                    <td>{{ dmCqBhxh.activeDate }}</td>
+                    <td>{{ dmCqBhxh.inactiveDate }}</td>
+                    <td>{{ dmCqBhxh.maCqbhCha }}</td>
+                    <td>{{ dmCqBhxh.nguoiKy }}</td>
+                    <td>{{ dmCqBhxh.chucDanh }}</td>
+                    <td>{{ dmCqBhxh.tenNoiKy }}</td>
+                    <td>{{ dmCqBhxh.isActive }}</td>
+                    <td>{{ dmCqBhxh.path }}</td>
+                    <td>{{ dmCqBhxh.ngayKhoa }}</td>
+                    <td>{{ dmCqBhxh.soQdTl }}</td>
+                    <td>{{ dmCqBhxh.ngayQdTl }}</td>
+                    <td>{{ dmCqBhxh.cqKyQd }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/dm-cq-bhxh', dmCqBhxh.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/dm-cq-bhxh', dmCqBhxh.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(dmCqBhxh)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="dmCqBhxhs && dmCqBhxhs.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
+    </div>
+</div>

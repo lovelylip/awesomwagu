@@ -1,0 +1,43 @@
+{
+  "awesomeaguApp": {
+    "dmCqBhxh": {
+      "home": {
+        "title": "Dm Cq Bhxhs",
+        "createLabel": "Thêm mới một Dm Cq Bhxh",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Dm Cq Bhxh",
+        "search": "Tìm Dm Cq Bhxh",
+        "notFound": "No Dm Cq Bhxhs found"
+      },
+      "created": "Một Dm Cq Bhxh mới được tạo với định danh {{ param }}",
+      "updated": "Một Dm Cq Bhxh cập nhật với định danh {{ param }}",
+      "deleted": "Một Dm Cq Bhxh đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Dm Cq Bhxh {{ id }}?"
+      },
+      "detail": {
+        "title": "Dm Cq Bhxh"
+      },
+      "maCqbh": "Ma Cqbh",
+      "ten": "Ten",
+      "diaChi": "Dia Chi",
+      "maXa": "Ma Xa",
+      "maHuyen": "Ma Huyen",
+      "maTinh": "Ma Tinh",
+      "emailAcc": "Email Acc",
+      "phoneNumeric": "Phone Numeric",
+      "status": "Status",
+      "activeDate": "Active Date",
+      "inactiveDate": "Inactive Date",
+      "maCqbhCha": "Ma Cqbh Cha",
+      "nguoiKy": "Nguoi Ky",
+      "chucDanh": "Chuc Danh",
+      "tenNoiKy": "Ten Noi Ky",
+      "isActive": "Is Active",
+      "path": "Path",
+      "ngayKhoa": "Ngay Khoa",
+      "soQdTl": "So Qd Tl",
+      "ngayQdTl": "Ngay Qd Tl",
+      "cqKyQd": "Cq Ky Qd"
+    }
+  }
+}

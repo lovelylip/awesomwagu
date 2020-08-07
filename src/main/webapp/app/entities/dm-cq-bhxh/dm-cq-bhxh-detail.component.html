@@ -1,0 +1,110 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="dmCqBhxh">
+            <h2><span jhiTranslate="awesomeaguApp.dmCqBhxh.detail.title">Dm Cq Bhxh</span> {{ dmCqBhxh.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="awesomeaguApp.dmCqBhxh.maCqbh">Ma Cqbh</span></dt>
+                <dd>
+                    <span>{{ dmCqBhxh.maCqbh }}</span>
+                </dd>
+                <dt><span jhiTranslate="awesomeaguApp.dmCqBhxh.ten">Ten</span></dt>
+                <dd>
+                    <span>{{ dmCqBhxh.ten }}</span>
+                </dd>
+                <dt><span jhiTranslate="awesomeaguApp.dmCqBhxh.diaChi">Dia Chi</span></dt>
+                <dd>
+                    <span>{{ dmCqBhxh.diaChi }}</span>
+                </dd>
+                <dt><span jhiTranslate="awesomeaguApp.dmCqBhxh.maXa">Ma Xa</span></dt>
+                <dd>
+                    <span>{{ dmCqBhxh.maXa }}</span>
+                </dd>
+                <dt><span jhiTranslate="awesomeaguApp.dmCqBhxh.maHuyen">Ma Huyen</span></dt>
+                <dd>
+                    <span>{{ dmCqBhxh.maHuyen }}</span>
+                </dd>
+                <dt><span jhiTranslate="awesomeaguApp.dmCqBhxh.maTinh">Ma Tinh</span></dt>
+                <dd>
+                    <span>{{ dmCqBhxh.maTinh }}</span>
+                </dd>
+                <dt><span jhiTranslate="awesomeaguApp.dmCqBhxh.emailAcc">Email Acc</span></dt>
+                <dd>
+                    <span>{{ dmCqBhxh.emailAcc }}</span>
+                </dd>
+                <dt><span jhiTranslate="awesomeaguApp.dmCqBhxh.phoneNumeric">Phone Numeric</span></dt>
+                <dd>
+                    <span>{{ dmCqBhxh.phoneNumeric }}</span>
+                </dd>
+                <dt><span jhiTranslate="awesomeaguApp.dmCqBhxh.status">Status</span></dt>
+                <dd>
+                    <span>{{ dmCqBhxh.status }}</span>
+                </dd>
+                <dt><span jhiTranslate="awesomeaguApp.dmCqBhxh.activeDate">Active Date</span></dt>
+                <dd>
+                    <span>{{ dmCqBhxh.activeDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="awesomeaguApp.dmCqBhxh.inactiveDate">Inactive Date</span></dt>
+                <dd>
+                    <span>{{ dmCqBhxh.inactiveDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="awesomeaguApp.dmCqBhxh.maCqbhCha">Ma Cqbh Cha</span></dt>
+                <dd>
+                    <span>{{ dmCqBhxh.maCqbhCha }}</span>
+                </dd>
+                <dt><span jhiTranslate="awesomeaguApp.dmCqBhxh.nguoiKy">Nguoi Ky</span></dt>
+                <dd>
+                    <span>{{ dmCqBhxh.nguoiKy }}</span>
+                </dd>
+                <dt><span jhiTranslate="awesomeaguApp.dmCqBhxh.chucDanh">Chuc Danh</span></dt>
+                <dd>
+                    <span>{{ dmCqBhxh.chucDanh }}</span>
+                </dd>
+                <dt><span jhiTranslate="awesomeaguApp.dmCqBhxh.tenNoiKy">Ten Noi Ky</span></dt>
+                <dd>
+                    <span>{{ dmCqBhxh.tenNoiKy }}</span>
+                </dd>
+                <dt><span jhiTranslate="awesomeaguApp.dmCqBhxh.isActive">Is Active</span></dt>
+                <dd>
+                    <span>{{ dmCqBhxh.isActive }}</span>
+                </dd>
+                <dt><span jhiTranslate="awesomeaguApp.dmCqBhxh.path">Path</span></dt>
+                <dd>
+                    <span>{{ dmCqBhxh.path }}</span>
+                </dd>
+                <dt><span jhiTranslate="awesomeaguApp.dmCqBhxh.ngayKhoa">Ngay Khoa</span></dt>
+                <dd>
+                    <span>{{ dmCqBhxh.ngayKhoa }}</span>
+                </dd>
+                <dt><span jhiTranslate="awesomeaguApp.dmCqBhxh.soQdTl">So Qd Tl</span></dt>
+                <dd>
+                    <span>{{ dmCqBhxh.soQdTl }}</span>
+                </dd>
+                <dt><span jhiTranslate="awesomeaguApp.dmCqBhxh.ngayQdTl">Ngay Qd Tl</span></dt>
+                <dd>
+                    <span>{{ dmCqBhxh.ngayQdTl }}</span>
+                </dd>
+                <dt><span jhiTranslate="awesomeaguApp.dmCqBhxh.cqKyQd">Cq Ky Qd</span></dt>
+                <dd>
+                    <span>{{ dmCqBhxh.cqKyQd }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/dm-cq-bhxh', dmCqBhxh.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

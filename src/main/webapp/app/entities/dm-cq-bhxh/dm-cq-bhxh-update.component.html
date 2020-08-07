@@ -1,0 +1,158 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-dm-cq-bhxh-heading" jhiTranslate="awesomeaguApp.dmCqBhxh.home.createOrEditLabel">Create or edit a Dm Cq Bhxh</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="awesomeaguApp.dmCqBhxh.maCqbh" for="field_maCqbh">Ma Cqbh</label>
+                    <input type="text" class="form-control" name="maCqbh" id="field_maCqbh"
+                           formControlName="maCqbh"/>
+                    <div *ngIf="editForm.get('maCqbh')!.invalid && (editForm.get('maCqbh')!.dirty || editForm.get('maCqbh')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('maCqbh')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="awesomeaguApp.dmCqBhxh.ten" for="field_ten">Ten</label>
+                    <input type="text" class="form-control" name="ten" id="field_ten"
+                           formControlName="ten"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="awesomeaguApp.dmCqBhxh.diaChi" for="field_diaChi">Dia Chi</label>
+                    <input type="text" class="form-control" name="diaChi" id="field_diaChi"
+                           formControlName="diaChi"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="awesomeaguApp.dmCqBhxh.maXa" for="field_maXa">Ma Xa</label>
+                    <input type="text" class="form-control" name="maXa" id="field_maXa"
+                           formControlName="maXa"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="awesomeaguApp.dmCqBhxh.maHuyen" for="field_maHuyen">Ma Huyen</label>
+                    <input type="text" class="form-control" name="maHuyen" id="field_maHuyen"
+                           formControlName="maHuyen"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="awesomeaguApp.dmCqBhxh.maTinh" for="field_maTinh">Ma Tinh</label>
+                    <input type="text" class="form-control" name="maTinh" id="field_maTinh"
+                           formControlName="maTinh"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="awesomeaguApp.dmCqBhxh.emailAcc" for="field_emailAcc">Email Acc</label>
+                    <input type="text" class="form-control" name="emailAcc" id="field_emailAcc"
+                           formControlName="emailAcc"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="awesomeaguApp.dmCqBhxh.phoneNumeric" for="field_phoneNumeric">Phone Numeric</label>
+                    <input type="text" class="form-control" name="phoneNumeric" id="field_phoneNumeric"
+                           formControlName="phoneNumeric"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="awesomeaguApp.dmCqBhxh.status" for="field_status">Status</label>
+                    <input type="text" class="form-control" name="status" id="field_status"
+                           formControlName="status"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="awesomeaguApp.dmCqBhxh.activeDate" for="field_activeDate">Active Date</label>
+                    <input type="number" class="form-control" name="activeDate" id="field_activeDate"
+                           formControlName="activeDate"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="awesomeaguApp.dmCqBhxh.inactiveDate" for="field_inactiveDate">Inactive Date</label>
+                    <input type="number" class="form-control" name="inactiveDate" id="field_inactiveDate"
+                           formControlName="inactiveDate"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="awesomeaguApp.dmCqBhxh.maCqbhCha" for="field_maCqbhCha">Ma Cqbh Cha</label>
+                    <input type="text" class="form-control" name="maCqbhCha" id="field_maCqbhCha"
+                           formControlName="maCqbhCha"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="awesomeaguApp.dmCqBhxh.nguoiKy" for="field_nguoiKy">Nguoi Ky</label>
+                    <input type="text" class="form-control" name="nguoiKy" id="field_nguoiKy"
+                           formControlName="nguoiKy"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="awesomeaguApp.dmCqBhxh.chucDanh" for="field_chucDanh">Chuc Danh</label>
+                    <input type="text" class="form-control" name="chucDanh" id="field_chucDanh"
+                           formControlName="chucDanh"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="awesomeaguApp.dmCqBhxh.tenNoiKy" for="field_tenNoiKy">Ten Noi Ky</label>
+                    <input type="text" class="form-control" name="tenNoiKy" id="field_tenNoiKy"
+                           formControlName="tenNoiKy"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="awesomeaguApp.dmCqBhxh.isActive" for="field_isActive">Is Active</label>
+                    <input type="number" class="form-control" name="isActive" id="field_isActive"
+                           formControlName="isActive"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="awesomeaguApp.dmCqBhxh.path" for="field_path">Path</label>
+                    <input type="text" class="form-control" name="path" id="field_path"
+                           formControlName="path"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="awesomeaguApp.dmCqBhxh.ngayKhoa" for="field_ngayKhoa">Ngay Khoa</label>
+                    <input type="number" class="form-control" name="ngayKhoa" id="field_ngayKhoa"
+                           formControlName="ngayKhoa"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="awesomeaguApp.dmCqBhxh.soQdTl" for="field_soQdTl">So Qd Tl</label>
+                    <input type="text" class="form-control" name="soQdTl" id="field_soQdTl"
+                           formControlName="soQdTl"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="awesomeaguApp.dmCqBhxh.ngayQdTl" for="field_ngayQdTl">Ngay Qd Tl</label>
+                    <input type="number" class="form-control" name="ngayQdTl" id="field_ngayQdTl"
+                           formControlName="ngayQdTl"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="awesomeaguApp.dmCqBhxh.cqKyQd" for="field_cqKyQd">Cq Ky Qd</label>
+                    <input type="text" class="form-control" name="cqKyQd" id="field_cqKyQd"
+                           formControlName="cqKyQd"/>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

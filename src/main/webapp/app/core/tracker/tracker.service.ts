@@ -28,10 +28,12 @@ export class TrackerService {
     // building absolute path so that websocket doesn't fail when deploying with a context path
     let url = '/websocket/tracker';
     url = this.location.prepareExternalUrl(url);
+    window.console.log(url);
     const authToken = this.authServerProvider.getToken();
     if (authToken) {
       url += '?access_token=' + authToken;
     }
+    window.console.log(url);
     const socket: WebSocket = new SockJS(url);
     this.stompClient = Stomp.over(socket);
     const headers: Stomp.ConnectionHeaders = {};

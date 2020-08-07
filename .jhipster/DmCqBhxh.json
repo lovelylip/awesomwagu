@@ -1,0 +1,101 @@
+{
+  "fluentMethods": true,
+  "clientRootFolder": "",
+  "relationships": [],
+  "fields": [
+    {
+      "fieldName": "maCqbh",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "ten",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "diaChi",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "maXa",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "maHuyen",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "maTinh",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "emailAcc",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "phoneNumeric",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "activeDate",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "inactiveDate",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "maCqbhCha",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nguoiKy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "chucDanh",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tenNoiKy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isActive",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "path",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ngayKhoa",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "soQdTl",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ngayQdTl",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "cqKyQd",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20200807115910",
+  "dto": "mapstruct",
+  "searchEngine": "elasticsearch",
+  "service": "serviceImpl",
+  "entityTableName": "dm_cq_bhxh",
+  "databaseType": "sql",
+  "readOnly": false,
+  "jpaMetamodelFiltering": true,
+  "pagination": "pagination"
+}
