@@ -86,7 +86,7 @@ public class DmCqBhxh implements Serializable {
     private Long ngayQdTl;
 
     @Column(name = "cq_ky_qd")
-    private String cqKyQd;
+    private Long cqKyQd;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -357,16 +357,16 @@ public class DmCqBhxh implements Serializable {
         this.ngayQdTl = ngayQdTl;
     }
 
-    public String getCqKyQd() {
+    public Long getCqKyQd() {
         return cqKyQd;
     }
 
-    public DmCqBhxh cqKyQd(String cqKyQd) {
+    public DmCqBhxh cqKyQd(Long cqKyQd) {
         this.cqKyQd = cqKyQd;
         return this;
     }
 
-    public void setCqKyQd(String cqKyQd) {
+    public void setCqKyQd(Long cqKyQd) {
         this.cqKyQd = cqKyQd;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
