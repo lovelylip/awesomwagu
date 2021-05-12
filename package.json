@@ -39,7 +39,7 @@
     "@angular/cdk": "^9.2.0",
     "primeng": "9.1.0",
     "primeng-extensions": "1.0.1",
-    "chart.js": "2.7.3",
+    "chart.js": "2.9.4",
     "primeicons": "2.0.0",
     "primeflex": "1.0.0",
     "@fullcalendar/core": "4.1.0",
